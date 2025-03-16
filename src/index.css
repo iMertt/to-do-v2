@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-background-light to-blue-50 dark:from-background-dark dark:to-indigo-950 min-h-screen bg-fixed text-gray-800 dark:text-gray-200;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-light to-indigo-500 text-white hover:from-indigo-500 hover:to-primary-light dark:from-primary-dark dark:to-indigo-400 dark:hover:from-indigo-400 dark:hover:to-primary-dark focus:ring-primary-light dark:focus:ring-primary-dark shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gradient-to-r from-secondary-light to-pink-500 text-white hover:from-pink-500 hover:to-secondary-light dark:from-secondary-dark dark:to-pink-400 dark:hover:from-pink-400 dark:hover:to-secondary-dark focus:ring-secondary-light dark:focus:ring-secondary-dark shadow-lg;
+  }
+
+  .btn-outline {
+    @apply btn backdrop-blur-sm bg-glass-light dark:bg-glass-dark border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 shadow-md;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-md border border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-all duration-300 shadow-sm;
+  }
+
+  .card {
+    @apply bg-card-light dark:bg-card-dark backdrop-blur-md rounded-xl shadow-neo dark:shadow-neo-dark p-5 transition-all duration-300 border border-gray-100 dark:border-gray-800;
+  }
+
+  .task-item {
+    @apply card flex items-center gap-3 mb-3 hover:shadow-lg dark:hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .task-item.completed {
+    @apply opacity-70;
+  }
+
+  .task-checkbox {
+    @apply h-5 w-5 rounded-full border-2 border-gray-400 dark:border-gray-500 flex items-center justify-center transition-all duration-200;
+  }
+
+  .task-checkbox.completed {
+    @apply border-primary-light dark:border-primary-dark bg-primary-light dark:bg-primary-dark;
+  }
+
+  .category-badge {
+    @apply px-2 py-1 text-xs rounded-full font-medium shadow-sm;
+  }
+
+  .priority-high {
+    @apply bg-red-100/80 text-red-800 dark:bg-red-900/30 dark:text-red-300 backdrop-blur-xs;
+  }
+
+  .priority-medium {
+    @apply bg-yellow-100/80 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 backdrop-blur-xs;
+  }
+
+  .priority-low {
+    @apply bg-green-100/80 text-green-800 dark:bg-green-900/30 dark:text-green-300 backdrop-blur-xs;
+  }
+
+  .tag {
+    @apply bg-glass-light dark:bg-glass-dark backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium shadow-sm;
+  }
 }
