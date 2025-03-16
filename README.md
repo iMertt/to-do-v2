@@ -2,6 +2,9 @@
 
 A modern task management application built with React and Tailwind CSS, featuring a clean and intuitive interface with dark/light theme support.
 
+## Live Demo
+🚀 [View Live Demo](https://idyllic-fox-bf727d.netlify.app/)
+
 ## Features
 
 - ✨ Create, edit, and delete tasks
