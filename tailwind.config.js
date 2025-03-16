@@ -8,15 +8,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: '#4F46E5', // Daha derin indigo
+          light: '#4F46E5', 
           dark: '#6366F1',
         },
         secondary: {
-          light: '#DB2777', // Daha canlı pembe
+          light: '#DB2777', 
           dark: '#EC4899',
         },
         accent: {
-          light: '#059669', // Daha zengin zümrüt
+          light: '#059669', 
           dark: '#10B981',
         },
         background: {
